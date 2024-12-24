@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercar Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Supercar Fun Facts</h1>
+        <p id="fact"></p>
+        <button id="generate">Generate Fact</button>
+    </div>
+    <script>
+        const facts = [
+          "The Bugatti Chiron Super Sport 300+ holds the record for the fastest production car, reaching a speed of 304.77 mph.",
+          "The Koenigsegg Jesko Absolut is predicted to be even faster than the Chiron Super Sport 300+, with an estimated top speed of 330 mph.",
+          "The McLaren F1, released in 1992, was the first production car to feature a carbon fiber monocoque chassis.",
+          "The Ferrari Enzo, named after the legendary founder of the company, was limited to only 400 units.",
+          "The Lamborghini Aventador SVJ features a unique aerodynamic design with a massive rear wing that generates up to 1,700 pounds of downforce.",
+          "The Porsche 918 Spyder, a hybrid hypercar, can accelerate from 0 to 60 mph in just 2.5 seconds.",
+          "The Pagani Huayra Roadster BC is powered by a 6.0-liter twin-turbocharged V12 engine that produces over 800 horsepower.",
+          "The Aston Martin Valkyrie, developed in collaboration with Red Bull Racing, features an active aero system that adjusts the car's aerodynamics based on speed and driving conditions.",
+          "The Rimac Nevera, an all-electric hypercar, has a claimed top speed of 258 mph and a range of 340 miles.",
+          "The Pininfarina Battista, another all-electric hypercar, is powered by four electric motors that generate a combined output of 1,900 horsepower."
+        ];
+
+        const factElement = document.getElementById("fact");
+        const generateButton = document.getElementById("generate");
+
+        function generateFact() {
+          const randomIndex = Math.floor(Math.random() * facts.length);
+          factElement.textContent = facts[randomIndex];
+        }
+
+        generateButton.addEventListener("click", generateFact);
+
+        // Generate a random fact on page load
+        generateFact();
+    </script>
+</body>
+</html>
